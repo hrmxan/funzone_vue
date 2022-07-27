@@ -1,0 +1,4204 @@
+body {
+  background-color: #091423;
+  position: relative;
+}
+
+header,
+main,
+footer {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+* a {
+  text-decoration: none;
+  color: #fff;
+}
+
+* ol,
+* ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Krona_One/KronaOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/tthoves/TTHoves-Regular.ttf") format("truetype");
+}
+
+.button-free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #F16B41, #C51841) 10;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.button-free:hover {
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  border-image: linear-gradient(50deg, #fad3c7, #C51841) 10;
+  color: white;
+}
+
+.button-full {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-image: linear-gradient(50deg, #fad3c7, #C51841) 10;
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.button-full:hover {
+  background-image: linear-gradient(98.07deg, #f16a4100 0.71%, #c5184000 100%);
+  border-image: linear-gradient(90deg, #F16B41, #C51841) 10;
+  color: white;
+}
+
+.body__filterbg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.body__filterbg .red {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  left: 54px;
+  top: 107px;
+  background: #f2544c;
+  filter: blur(150px);
+}
+
+.body__filterbg .blue {
+  position: absolute;
+  width: 300px;
+  height: 120px;
+  right: 30px;
+  top: 700px;
+  background: #1bbbebd2;
+  opacity: 0.8;
+  filter: blur(150px);
+}
+
+.body__filterbg .green {
+  position: absolute;
+  width: 300px;
+  height: 164px;
+  left: 50%;
+  top: 1358px;
+  transform: translateX(-50%);
+  background: #13D602;
+  opacity: 0.5;
+  filter: blur(150px);
+}
+
+.body__filterbg .orange {
+  position: absolute;
+  width: 250px;
+  height: 212px;
+  left: 0;
+  top: 2482px;
+  background: #F24CA6;
+  opacity: 0.7;
+  filter: blur(150px);
+}
+
+.close__action {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.close__action.close__wait {
+  visibility: visible;
+}
+
+input {
+  letter-spacing: 2px;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.burger_btn {
+  order: 1;
+}
+
+.logo {
+  order: 2;
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+.logo .logo_brand {
+  height: 35px;
+  object-fit: contain;
+  margin-right: 22px;
+}
+
+@media (max-width: 575px) {
+  .logo .logo_brand {
+    height: 25px;
+  }
+}
+
+.logo .logo_name {
+  height: 21px;
+  object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .logo {
+    margin-right: 0;
+  }
+  .logo .logo_brand {
+    margin-right: 0;
+  }
+}
+
+.navbar_colapse {
+  display: flex;
+  position: relative;
+  order: 3;
+  flex-grow: 1;
+}
+
+.navbar_colapse .navbar_list {
+  display: flex;
+  align-items: center;
+  padding: 0 -20px;
+}
+
+.navbar_colapse .navbar_list li {
+  display: flex;
+  margin-right: 20px;
+}
+
+.navbar_colapse .navbar_list li:last-child {
+  margin-right: 0;
+}
+
+.navbar_colapse .navbar_list li a {
+  display: flex;
+  align-items: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 15px;
+  transition: .5s ease all;
+}
+
+.navbar_colapse .navbar_list li a:hover {
+  background-image: -webkit-linear-gradient(0deg, #F16B41, #C51841);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reg__log {
+  display: flex;
+  order: 4;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.reg__log a.business {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 15px;
+  margin-right: 15px;
+}
+
+.reg__log a.business:hover {
+  background-image: -webkit-linear-gradient(0deg, #F16B41, #C51841);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reg__log a.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  color: #FFFFFF;
+  z-index: 1;
+  background-image: linear-gradient(90deg, #F16B41, #C51841);
+  background-repeat: no-repeat;
+}
+
+.reg__log a.login span {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 16px 28px;
+  background-color: #091423;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.reg__log a.login:hover span {
+  background-color: transparent;
+}
+
+.burger_btn {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.navbar_colapse_bar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(30px);
+  z-index: 100;
+}
+
+.navbar_colapse_bar .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar_colapse_bar .navbar_list_bar {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transform: translateY(-100%);
+  transition: 0.5s;
+}
+
+.navbar_colapse_bar .navbar_list_bar li {
+  margin-right: 0;
+  margin-bottom: 34px;
+}
+
+.navbar_colapse_bar .navbar_list_bar li:last-child {
+  margin-bottom: 0;
+}
+
+.navbar_colapse_bar.colapsed {
+  transition: 0.5s ease-in-out all;
+  transform: translateY(0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar_colapse_bar.colapsed .navbar_list_bar {
+  transform: translateY(0);
+}
+
+.navbar_colapse_bar .navbar_list_bar {
+  display: flex;
+  align-items: center;
+  padding: 0 -20px;
+}
+
+.navbar_colapse_bar .navbar_list_bar li {
+  display: flex;
+}
+
+.navbar_colapse_bar .navbar_list_bar li:last-child {
+  margin-right: 0;
+}
+
+.navbar_colapse_bar .navbar_list_bar li a {
+  display: flex;
+  align-items: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 15px;
+  transition: .5s ease all;
+}
+
+.navbar_colapse_bar .navbar_list_bar li a:hover {
+  background-image: -webkit-linear-gradient(0deg, #F16B41, #C51841);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.kip_up {
+  background-image: url("../img/kipup_bg.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center center;
+  padding-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .kip_up {
+    background-size: 60%;
+    background-position: 10% center;
+  }
+}
+
+@media (min-width: 992px) {
+  .kip_up {
+    background-size: 50%;
+  }
+}
+
+.kip_up .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .kip_up .buttons {
+    justify-content: flex-start;
+  }
+}
+
+.kip_up .buttons a {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  padding: 13px 20px;
+}
+
+@media (min-width: 992px) {
+  .kip_up .buttons a {
+    padding: 18px 30px;
+  }
+}
+
+.kip_up .buttons a:first-child {
+  margin-right: 16px;
+}
+
+@media (min-width: 992px) {
+  .kip_up .buttons a:first-child {
+    margin-right: 20px;
+  }
+}
+
+.kipup__titlel {
+  margin-top: 55px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .kipup__titlel {
+    font-family: 'Krona One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: left;
+  }
+}
+
+.kipup__text {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .kipup__text {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    text-align: left;
+  }
+}
+
+.kipup__right {
+  margin-top: 97px;
+  z-index: -1;
+}
+
+.kipup__img_fon {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.kipup__img_fon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.kipup__img_fon .filter__bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: linear-gradient(180deg, rgba(9, 20, 35, 0) 0%, rgba(9, 20, 35, 0.63) 20.93%, rgba(9, 20, 35, 0.93) 57.47%, #091423 75.99%);
+}
+
+.section__title {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+  .section__title {
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 50px;
+  }
+}
+
+.cat__row {
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .cat__row {
+    margin-bottom: 100px;
+  }
+}
+
+.cat__col {
+  margin-bottom: 36px;
+}
+
+.cat__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cat__card:hover img {
+  transform: scale(1.1) rotate(5deg) translateY(-5px) skew(1deg);
+}
+
+.cat__card:hover strong {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.cat__card img {
+  width: 100px;
+  object-fit: contain;
+  flex-grow: 1;
+  margin-bottom: 14px;
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  .cat__card img {
+    width: 150px;
+  }
+}
+
+.cat__card strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  .cat__card strong {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.cat__card span {
+  display: flex;
+  height: 2px;
+  width: 100%;
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.tops__card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.tops__card:hover img {
+  transform: scale(1.1);
+}
+
+.tops__card .img__body {
+  width: 100%;
+  height: 166px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.tops__card .img__body img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.tops__card .name {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #EDEDED;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.tops__card .type-deagre {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.tops__card .type-deagre .type {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  padding: 5px 8px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(90deg, #F16B41, #C51841) 10;
+  margin-right: 10px;
+}
+
+.tops__card .type-deagre .deagre {
+  display: flex;
+  align-items: center;
+}
+
+.tops__card .type-deagre .deagre .star_full {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/svg/star_full.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 3px;
+}
+
+.tops__card .type-deagre .deagre .star_free {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  background-image: url("../img/svg/star_free.svg");
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 3px;
+}
+
+.tops__card .summa {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.tops__card .status {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+.tops__card .status .time {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.tops__card .status .active {
+  width: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 4px 8px;
+}
+
+.tops__card .status .active.open {
+  background: linear-gradient(84.91deg, #58D172 8.18%, #216A3A 90.36%);
+}
+
+.tops__card .status .active.closed {
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.tops__col {
+  margin-bottom: 30px;
+}
+
+.tops__row {
+  margin-bottom: 34px;
+}
+
+.cent__aboute_body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+@media (min-width: 768px) {
+  .cent__aboute_body {
+    margin-bottom: 130px;
+  }
+}
+
+.cent__aboute_body .left {
+  justify-content: flex-end;
+}
+
+.cent__aboute_body .right {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.cent__aboute_body strong {
+  display: flex;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: right;
+  color: #FFFFFF;
+  width: calc(50% - 6px);
+}
+
+@media (min-width: 768px) {
+  .cent__aboute_body strong {
+    width: calc(100% - 26px);
+  }
+}
+
+@media (min-width: 992px) {
+  .cent__aboute_body strong {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 44px;
+  }
+}
+
+.cent__aboute_body span {
+  width: 2px;
+  height: 64px;
+  display: flex;
+  background-image: linear-gradient(#F16B41, #C51841);
+  margin: 0 10px;
+}
+
+@media (min-width: 768px) {
+  .cent__aboute_body span {
+    width: 3px;
+    height: 100px;
+    margin: 0 50px;
+  }
+}
+
+.tips__nav_nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.tips__nav_nav .nav__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+
+@media (min-width: 992px) {
+  .tips__nav_nav .nav__body {
+    flex-direction: column;
+    overflow: initial;
+  }
+}
+
+.tips__nav_nav .nav__body::-webkit-scrollbar {
+  display: none;
+}
+
+.tips__nav_nav .nav__body a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  padding: 12px 4px;
+  margin-right: 20px;
+}
+
+@media (min-width: 992px) {
+  .tips__nav_nav .nav__body a {
+    font-size: 18px;
+    margin-bottom: 6px;
+    margin-right: 0;
+  }
+}
+
+.tips__nav_nav .nav__body a span {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  transition: 0.5s;
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  margin-right: 0;
+}
+
+@media (min-width: 992px) {
+  .tips__nav_nav .nav__body a span {
+    position: relative;
+    left: initial;
+    bottom: initial;
+    transform: translateX(0);
+  }
+}
+
+.tips__nav_nav .nav__body a.active span {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .tips__nav_nav .nav__body a.active span {
+    width: 50px;
+    margin-right: 10px;
+  }
+}
+
+.tips__nav_row {
+  align-items: flex-start;
+}
+
+.top__line {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(90deg, #F16B41, #C51841);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 992px) {
+  .top__line {
+    margin-bottom: 57px;
+  }
+}
+
+footer {
+  padding: 34px 0 24px;
+}
+
+@media (min-width: 992px) {
+  footer {
+    padding: 170px 0 70px;
+  }
+}
+
+.brend__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 29px;
+}
+
+@media (min-width: 992px) {
+  .brend__links {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .brend__links .logo_f {
+    margin-bottom: 34px;
+  }
+}
+
+.brend__links .logo_f {
+  display: flex;
+  align-items: center;
+  order: 1;
+}
+
+.brend__links .logo_f .brend {
+  display: flex;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+@media (min-width: 992px) {
+  .brend__links .logo_f .brend {
+    height: 35px;
+  }
+}
+
+.brend__links .logo_f .name {
+  height: 15px;
+  object-fit: contain;
+}
+
+@media (min-width: 992px) {
+  .brend__links .logo_f .name {
+    height: 21px;
+  }
+}
+
+.brend__links .links {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.brend__links .links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-right: 14px;
+  transition: 0.5s;
+}
+
+.brend__links .links a:hover {
+  border-color: #fff;
+}
+
+.brend__links .links a:last-child {
+  margin-right: 0;
+}
+
+.accardion {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #EDEDED;
+}
+
+@media (min-width: 992px) {
+  .accardion {
+    margin-top: 0;
+    border-bottom: 0;
+  }
+}
+
+.accardion .accardion__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 992px) {
+  .accardion .accardion__title {
+    margin-bottom: 25px;
+  }
+}
+
+.accardion .accardion__title .plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 992px) {
+  .accardion .accardion__title .plus {
+    display: none;
+  }
+}
+
+.accardion .accardion__title .plus img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s;
+}
+
+.accardion .accardion__title a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.accardion ul {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.accardion .accardion__item {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  height: 30px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+  .accardion .accardion__item {
+    margin-left: 0;
+    height: initial;
+  }
+}
+
+.accardion .accardion__item:last-child {
+  margin-bottom: 0;
+}
+
+.accardion .accardion__item a {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+}
+
+@media (min-width: 992px) {
+  .accardion .accardion__item a {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.accardion.closed ul {
+  margin-bottom: 0;
+}
+
+.accardion.closed .accardion__item {
+  height: 0;
+}
+
+@media (min-width: 992px) {
+  .accardion.closed .accardion__item {
+    height: auto;
+  }
+}
+
+.accardion.closed .accardion__title {
+  margin-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+  .accardion.closed .accardion__title {
+    margin-bottom: 25px;
+  }
+}
+
+.accardion.closed .accardion__title .plus img {
+  transform: rotate(-135deg);
+}
+
+.copyread {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #FFFFFF;
+  margin-top: 17px;
+}
+
+@media (min-width: 992px) {
+  .copyread {
+    margin-top: 0;
+  }
+}
+
+body.login {
+  min-height: 100vh;
+}
+
+.login__title {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  color: #FFFFFF;
+  margin-bottom: 60px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__row {
+  margin-bottom: 30px;
+}
+
+.form__row label {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: justify;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.form__row .input_body {
+  display: flex;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 10;
+  padding: 0 15px 0 20px;
+  height: 54px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .form__row .input_body {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.form__row .input_body img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.form__row .input_body img.first {
+  margin-right: 10px;
+}
+
+.form__row .input_body img.seen {
+  cursor: pointer;
+}
+
+.form__row .input_body input {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  background: transparent;
+  height: 100%;
+  outline: none;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.form__row .forget {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.orline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.orline p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin: 0 10px;
+}
+
+.orline span {
+  display: flex;
+  height: 2px;
+  flex-grow: 1;
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.login__links {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 575px) {
+  .login__links {
+    margin-bottom: 30px;
+  }
+}
+
+.login__links a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border: 2px solid transparent;
+  background: linear-gradient(98.07deg, rgba(241, 107, 65, 0.3) 0.71%, rgba(197, 24, 65, 0.3) 100%);
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 10;
+  padding: 0 15px 0 20px;
+  transition: 0.5s;
+}
+
+@media (max-width: 575px) {
+  .login__links a {
+    margin-bottom: 30px;
+  }
+}
+
+.login__links a.last {
+  background: linear-gradient(271.79deg, #06071C 0%, rgba(22, 22, 26, 0) 99.8%);
+}
+
+.login__links a:hover {
+  background: linear-gradient(98.07deg, rgba(241, 107, 65, 0.3) 0.71%, rgba(197, 24, 65, 0.3) 100%);
+}
+
+.login__links a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 22px;
+}
+
+.login__regist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.login__regist a {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  height: 54px;
+  padding: 0 34px;
+  margin-right: 20px;
+}
+
+.login__regist a:last-child {
+  margin-right: 0;
+}
+
+.pay__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(98.07deg, rgba(241, 107, 65, 0.4) 0.71%, rgba(197, 24, 65, 0.4) 100%);
+  padding: 17px 20px;
+  border: 2px solid;
+  border-image: linear-gradient(90.99deg, rgba(255, 255, 255, 0.5) 0.09%, rgba(255, 255, 255, 0) 100%) 10;
+}
+
+.pay__card p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #EDEDED;
+  margin-bottom: 9px;
+}
+
+.pay__card p img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.pay__card strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.regist__past__title {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.deta__input {
+  letter-spacing: 3px;
+}
+
+.radio__labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.radio__labels:last-child {
+  margin-right: 0;
+}
+
+.radio__labels input {
+  display: none;
+}
+
+.radio__labels .mask {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid transparent;
+  border-image: linear-gradient(134deg, #fff, rgba(255, 255, 255, 0)) 10;
+  transition: 0.2s;
+}
+
+.radio__labels .mask::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+.radio__labels .mask.checked {
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  border-image: linear-gradient(134deg, #fad3c7, #C51841) 0.5;
+}
+
+.radio__labels .mask.checked::before {
+  width: 8px;
+  height: 8px;
+}
+
+.label__body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.label__body .mask {
+  margin-right: 15px;
+}
+
+.label__body img {
+  margin-right: 10px;
+}
+
+.regist {
+  padding-bottom: 180px;
+}
+
+.regist .input_body {
+  margin-bottom: 30px;
+}
+
+.order__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1199px) {
+  .order__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 40px;
+}
+
+@media (max-width: 1199px) {
+  .search {
+    margin-right: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.search .input_body {
+  display: flex;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 10;
+  padding: 0 15px 0 20px;
+  height: 54px;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.search .input_body img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+
+.search .input_body input {
+  display: flex;
+  border: none;
+  background: transparent;
+  height: 100%;
+  outline: none;
+  width: 100%;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.search a {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  min-width: 160px;
+  height: 54px;
+  padding: 0 34px;
+  margin-right: 20px;
+}
+
+.search a:last-child {
+  margin-right: 0;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+@media (max-width: 1199px) {
+  .filter {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.filter__body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1199px) {
+  .filter__body {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+.filter_select {
+  flex-shrink: 0;
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)) 10;
+  height: 54px;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.filter_select:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 1199px) {
+  .filter_select {
+    margin-bottom: 20px;
+  }
+}
+
+.filter_select .view__select {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 0 15px;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.filter_select img {
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  object-fit: contain;
+}
+
+.filter_select .drobdow_sort {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: calc(100% + 30px);
+  visibility: hidden;
+  opacity: 0;
+  padding: 25px;
+  background: linear-gradient(115.22deg, #191926 0%, #263344 100.47%);
+  box-shadow: 0px 20px 20px rgba(8, 1, 49, 0.41);
+  border: 2px solid transparent;
+  z-index: 11;
+  transition: 0.5s;
+  border-image-source: linear-gradient(114.9deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 50%) 10;
+}
+
+.filter_select .drobdow_sort.drobon {
+  top: calc(100% + 20px);
+  visibility: visible;
+  opacity: 1;
+  z-index: 10;
+}
+
+.filter_select .drobdow_sort.sport {
+  min-width: 300px;
+  left: 0;
+}
+
+.filter_select .drobdow_sort.sport input {
+  display: none;
+}
+
+.filter_select .drobdow_sort.sport label {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.filter_select .drobdow_sort.sport label span {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+.filter_select .drobdow_sort.sport label:last-child {
+  margin-bottom: 0;
+}
+
+.filter_select .drobdow_sort.time {
+  left: 0;
+  min-width: 200px;
+  align-items: center;
+}
+
+.filter_select .drobdow_sort.time h3 {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #EDEDED;
+  margin-bottom: 25px;
+}
+
+.filter_select .drobdow_sort.time h3.full {
+  font-weight: 600;
+}
+
+.filter_select .drobdow_sort.time h3.end {
+  margin-bottom: 20px;
+}
+
+.filter_select .drobdow_sort.time .time_line {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.filter_select .drobdow_sort.time .time_line p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.filter_select .drobdow_sort.time .time_line p span {
+  display: flex;
+  min-width: 30px;
+  justify-content: center;
+}
+
+.filter_select .drobdow_sort.time .button-full {
+  padding: 18px 30px;
+}
+
+.filter_select .drobdow_sort.price {
+  right: 0;
+  min-width: 330px;
+}
+
+@media (max-width: 1199px) {
+  .filter_select .drobdow_sort.price {
+    right: initial;
+    left: 0;
+  }
+}
+
+.filter_select .drobdow_sort.price .label__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0px;
+}
+
+.filter_select .drobdow_sort.price .label__body .mask {
+  margin-right: 15px;
+}
+
+.filter_select .drobdow_sort.price .label__body .radio__labels {
+  margin-right: 0;
+  margin-bottom: 30px;
+}
+
+.filter_select .drobdow_sort.price .button-full {
+  display: flex;
+  margin: 0 auto;
+  padding: 18px 30px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.filter_select .drobdow_sort.sort {
+  right: 0;
+  left: initial;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+@media (max-width: 1199px) {
+  .filter_select .drobdow_sort.sort {
+    right: initial;
+    left: 0;
+  }
+}
+
+.filter_select .drobdow_sort.sort .label__body {
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter_select .drobdow_sort.sort .label__body .radio__labels {
+  margin-right: 0;
+  margin-bottom: 30px;
+}
+
+.filter_select .drobdow_sort.sort .label__body .radio__labels:last-child {
+  margin-bottom: 0;
+}
+
+.container__double_range {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+input[type="range"] {
+  appearance: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  right: -12px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.slider-track {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider-track .range_buttons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+}
+
+.slider-track .range_buttons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+}
+
+.slider-track .range_buttons:last-child {
+  left: initial;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+  -moz-appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-ms-track {
+  appearance: none;
+  height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  -webkit-appearance: none;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-top: -9px;
+  pointer-events: auto;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  background-color: transparent;
+  pointer-events: auto;
+}
+
+input[type="range"]::-ms-thumb {
+  appearance: none;
+  height: 1.7em;
+  width: 1.7em;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: transparent;
+  pointer-events: auto;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  background-color: transparent;
+  border: 3px solid #C51841;
+}
+
+.values {
+  background-color: transparent;
+  width: 32%;
+  position: relative;
+  margin: auto;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.values:before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  margin: auto;
+  bottom: -14px;
+  left: 0;
+  right: 0;
+}
+
+.range_wrapper {
+  padding: 0 12px;
+}
+
+.range_buttons span {
+  width: 66px;
+  height: 30px;
+  background-image: url("../img/value_cat.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -10px);
+}
+
+.insport_top .top_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.insport_top h1 {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  color: #FFFFFF;
+}
+
+.insport_top .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.insport_top .buttons a {
+  padding: 0 30px;
+  height: 54px;
+  margin-left: 20px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.main__card_img {
+  width: 100%;
+  max-height: 400px;
+}
+
+.main__card_slider {
+  margin-top: 20px;
+  padding: 0 46px;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 85px;
+  object-fit: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 0;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+  width: 36px;
+  height: 36px;
+}
+
+.swiper-button-next::after img,
+.swiper-button-prev::after img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.main__card_about .post_title {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #EDEDED;
+  margin-bottom: 20px;
+}
+
+.main__card_about p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+.main__card_right_line {
+  margin-bottom: 40px;
+}
+
+.main__card_right_line .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.main__card_right_line .top img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.main__card_right_line .deagre {
+  display: flex;
+  align-items: center;
+}
+
+.main__card_right_line .deagre .star_full {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/svg/star_full.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+}
+
+.main__card_right_line .deagre .star_free {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/svg/star_free.svg");
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 5px;
+}
+
+.main__card_work .active {
+  margin-left: 20px;
+  width: 71px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 4px 8px;
+}
+
+.main__card_work .active.open {
+  background: linear-gradient(84.91deg, #58D172 8.18%, #216A3A 90.36%);
+}
+
+.main__card_work .active.closed {
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.main__card_work p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.main__card_work p span {
+  margin-right: 20px;
+}
+
+.main__card_work p span:last-child {
+  margin-right: 0;
+}
+
+.main__card_phone .numbers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.main__card_phone .numbers span {
+  height: 25px;
+  width: 2px;
+  background-image: linear-gradient(#F16B41, #C51841);
+  margin: 0 10px;
+}
+
+.main__card_locate p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.mapouter__insports {
+  position: relative;
+  text-align: right;
+  height: 100%;
+  height: 250px;
+}
+
+.mapouter__insports iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.mapouter__insports .gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 100%;
+  width: 100%;
+}
+
+.fc-timegrid-event-harness-inset {
+  background-color: #d6bebe;
+}
+
+.secelted__insport {
+  margin-top: 76px;
+  margin-bottom: 100px;
+}
+
+.card__select__insport {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-left: 11px solid transparent;
+  position: relative;
+  padding: 15px;
+  background: linear-gradient(115.22deg, #191926 0%, #263344 100.47%);
+  box-shadow: 0px 20px 20px rgba(8, 1, 49, 0.41);
+  margin-bottom: 30px;
+}
+
+.card__select__insport:last-child {
+  margin-bottom: 0;
+}
+
+.card__select__insport::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.card__select__insport .name__zone {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.card__select__insport .name__zone strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.card__select__insport .name__zone p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  color: #EDEDED;
+}
+
+.card__select__insport .name__zone p img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  margin-right: 4px;
+}
+
+.card__select__insport .secelted__insport {
+  display: flex;
+  flex-direction: row;
+}
+
+.card__select__insport .other {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.card__select__insport .other p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #EDEDED;
+  margin-bottom: 12px;
+}
+
+.card__select__insport .other strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.card__select__insport_wrap {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.card__select__insport_wrap .card__select__insport {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+.card__select__insport_wrap .cansel_button {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card__select__insport_wrap .cansel_button img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.card__select__insport_wrap .cansel_button span {
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.inssport__h3 {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: #FFFFFF;
+  margin-bottom: 50px;
+}
+
+.other__zones {
+  margin-bottom: 70px;
+}
+
+.other__zones .tops__row {
+  margin-bottom: 0;
+}
+
+.clients__say__card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid;
+  height: 100%;
+  justify-content: space-between;
+  border-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%) 10;
+}
+
+.clients__say__card .message {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #EDEDED;
+  margin-bottom: 37px;
+}
+
+.clients__say__card .user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.clients__say__card .user img {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-right: 15px;
+}
+
+.clients__say__card .user .name {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #EDEDED;
+  margin-bottom: 8px;
+}
+
+.clients__say__card .user .time {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #EDEDED;
+}
+
+body.reservation {
+  background-image: url("../img/reserv_bg.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.reservation__pay {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin-bottom: 36px;
+}
+
+.pay__cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+}
+
+.pay__card__type {
+  display: flex;
+  width: 130px;
+  height: 70px;
+  padding: 0 23px;
+  border: 2px solid transparent;
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+  background: rgba(255, 255, 255, 0.15);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+}
+
+.pay__card__type:hover {
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 100%) 10;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pay__card__type:hover img {
+  transform: scale(1.1);
+}
+
+.pay__card__type img {
+  max-width: 100%;
+  object-fit: contain;
+  transition: 0.5s;
+}
+
+.personal__row {
+  margin-top: 100px;
+  align-items: flex-start;
+}
+
+.per__nav_col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .per__nav_col {
+    flex-direction: column;
+  }
+  .per__nav_col .per__title {
+    margin-top: 30px;
+  }
+  .per__nav_col span.per__line {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 30px;
+    top: 0;
+    left: 0;
+  }
+}
+
+span.per__line {
+  width: 1px;
+  height: 100%;
+  display: flex;
+  flex-shrink: 0;
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  margin: 0 30px 0 0;
+  transform: rotate(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.personal__nav {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.personal__nav li {
+  display: flex;
+  width: 100%;
+}
+
+.personal__nav li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #FFFFFF;
+  border: 1px solid transparent;
+}
+
+.personal__nav li a.active {
+  border: 1px solid transparent;
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.personal__nav li a.active linearGradient stop {
+  stop-color: #ffff;
+}
+
+.personal__nav li a svg {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .personal__nav {
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+  .personal__nav li a {
+    align-items: center;
+    justify-content: center;
+  }
+  .personal__nav li a svg {
+    margin: 0;
+  }
+}
+
+.table_scroll {
+  overflow-x: scroll;
+  position: relative;
+}
+
+.per__booking_table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 30px;
+}
+
+.per__booking_table tr {
+  border-bottom: 1px solid #DC4441;
+}
+
+.per__booking_table tr.last {
+  border-bottom: none;
+}
+
+.per__booking_table tr.last td,
+.per__booking_table tr.last th {
+  border-bottom: 1px solid #DC4441;
+}
+
+.per__booking_table tr td,
+.per__booking_table tr th {
+  width: 118px;
+  height: 70px;
+  flex-shrink: 1;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border-top: 1px solid #DC4441;
+  border-left: 1px solid #DC4441;
+}
+
+.per__booking_table tr td:first-child,
+.per__booking_table tr th:first-child {
+  border-left: 1px solid #DC4441;
+}
+
+.per__booking_table tr th {
+  border-top: none;
+  padding: 10px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #EDEDED;
+}
+
+.per__booking_table tr th:first-child {
+  border-left: none;
+}
+
+.per__booking_table tr td {
+  min-width: 100px;
+}
+
+.per__booking_table tr td .mask {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 10px);
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.per__booking_table tr td .mask strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.per__booking_table tr td .mask a {
+  position: relative;
+  display: flex;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.per__booking_table tr td .mask a span {
+  background-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-clip: text;
+}
+
+.per__booking_table tr td .mask::after {
+  content: '';
+  position: absolute;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid #DE4741;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.per__booking_table tr td.booked:hover .mask {
+  opacity: 1;
+  visibility: visible;
+}
+
+.per__booking_table tr td a.booking__link {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding: 4px;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.per__booking_table tr td a.booking__link span {
+  display: flex;
+  display: flex;
+  width: 20%;
+  height: 100%;
+  background-color: rgba(241, 65, 65, 0.5);
+}
+
+.per__booking_table tr td a.booking__link:focus span {
+  width: calc(20% - 4px);
+}
+
+.per__booking_table.insport__table .ht_time {
+  padding: 0;
+  padding-bottom: 10px;
+}
+
+.per__booking_table.insport__table td {
+  padding: 0;
+  padding: 2px 0;
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span {
+  display: flex;
+  height: 100%;
+  width: calc(100% / 12);
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.booked {
+  background: rgba(241, 65, 65, 0.5);
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.booked_now {
+  background: rgba(55, 199, 86, 0.2);
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.booked_now.start {
+  border-left: 1px dashed #EDEDED;
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.booked_now.end {
+  border-right: 1px dashed #EDEDED;
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.start {
+  width: calc((100% / 12) - 1px);
+  margin-left: 1px;
+}
+
+.per__booking_table.insport__table td.bookeding .bookeding_body span.end {
+  width: calc((100% / 12) - 1px);
+  margin-right: 1px;
+}
+
+.per__booking_table.insport__table .th__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.per__booking_table.insport__table .th__body .top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.per__booking_table.insport__table .th__body .top img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.per__booking_table.insport__table .th__body .times {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.per__booking_table.insport__table .th__body .times span {
+  display: flex;
+  padding: 0 5px;
+}
+
+.log__out_ask {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.label__tip__bus {
+  margin-bottom: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label__tip__bus label {
+  margin: 0;
+}
+
+.per__reg__inp__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.per__reg__inp__col label {
+  margin-top: 10px;
+}
+
+.my__zone_col {
+  height: 100%;
+}
+
+.my__zone_card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.my__zone_card img {
+  width: initial;
+  max-width: 80%;
+}
+
+.my__zone_card a {
+  width: 100%;
+  padding: 18px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 767px) {
+  .regist__past__title {
+    margin-top: 30px;
+  }
+}
+
+.input_body .select__value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.my__select {
+  position: relative;
+}
+
+.my__select .select__options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + 20px);
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90.99deg, rgba(255, 255, 255, 0.5) 0.09%, rgba(255, 255, 255, 0) 100%) 10;
+  padding: 10px 15px;
+  background-image: linear-gradient(90deg, #303844, #303844);
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.my__select .select__options label {
+  padding: 10px 15px;
+}
+
+.my__select.select__open .select__options {
+  top: calc(100% + 10px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.bus_btn {
+  width: 100%;
+  height: 54px;
+  margin-bottom: 30px;
+}
+
+.bus__zone_sport {
+  margin-bottom: 0;
+}
+
+.file__input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 15px;
+  border: 1px dashed;
+  border-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%) 10;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.file__input input {
+  display: none;
+}
+
+.file__input span.file_upload {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 25px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  border: 0.5px solid transparent;
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+  padding: 8px 16px;
+  cursor: pointer;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  box-shadow: 0px 1px 2px rgba(6, 25, 56, 0.05);
+}
+
+.file__input span.file_upload img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  object-fit: contain;
+}
+
+.file__input .input_body {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #EDEDED;
+}
+
+.bus__week_nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.bus__week_nav a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 75px;
+  padding: 18px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  border: 2px solid transparent;
+  border-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%) 10;
+  margin-right: 10px;
+}
+
+.bus__week_nav a:last-child {
+  margin-right: 0;
+}
+
+.bus__week_nav a.active, .bus__week_nav a:hover {
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.bus__week_table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 40px;
+}
+
+.bus__week_table:last-child {
+  margin-bottom: 60px;
+}
+
+.bus__week_table tr {
+  border-bottom: 1px solid #DC4441;
+}
+
+.bus__week_table tr.last {
+  border-bottom: none;
+}
+
+.bus__week_table tr.last td,
+.bus__week_table tr.last th {
+  border-bottom: 1px solid #DC4441;
+}
+
+.bus__week_table tr td,
+.bus__week_table tr th {
+  width: 118px;
+  height: 70px;
+  flex-shrink: 1;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  border-top: 1px solid #DC4441;
+  border-left: 1px solid #DC4441;
+}
+
+.bus__week_table tr td:first-child,
+.bus__week_table tr th:first-child {
+  border-left: 1px solid #DC4441;
+}
+
+.bus__week_table tr th {
+  border-top: none;
+  padding: 10px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #EDEDED;
+}
+
+.bus__week_table tr th .th_body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bus__week_table tr th .th_body img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.bus__week_table tr th:first-child {
+  border-left: none;
+}
+
+.bus__week_table tr td {
+  min-width: 100px;
+}
+
+.bus__week_table tr.top td {
+  border: none;
+  height: initial;
+  position: relative;
+}
+
+.bus__week_table tr.top td span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #EDEDED;
+  position: relative;
+  left: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+
+.bus__week_table tr.body td {
+  padding: 2px;
+}
+
+.bus__week_table tr.body td .situation {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.bus__week_table tr.body td .situation .control__body {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(84.91deg, #37C756 8.18%, #316743 90.36%);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  min-width: 221px;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.bus__week_table tr.body td .situation .control__body::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -18px;
+  border-bottom: 9px solid #33904B;
+  border-top: 9px solid transparent;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 60px;
+  cursor: pointer;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  /* identical to box height, or 112% */
+  margin-bottom: 21px;
+  text-align: justify;
+  color: #FFFFFF;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels:last-child {
+  margin-right: 0;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels input {
+  display: none;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels .mask {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid transparent;
+  border-image: linear-gradient(134deg, #fff, rgba(255, 255, 255, 0)) 10;
+  transition: 0.2s;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels .mask::before {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: #fff;
+  transition: 0.2s;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels .mask.checked {
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  border-image: linear-gradient(134deg, #fad3c7, #C51841) 0.5;
+}
+
+.bus__week_table tr.body td .situation .control__body .checkbox__labels .mask.checked::before {
+  width: 8px;
+  height: 8px;
+}
+
+.bus__week_table tr.body td .situation .control__body .sum_input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid;
+  border-image: linear-gradient(90.99deg, #FFFFFF 0.09%, rgba(255, 255, 255, 0) 100%) 20;
+  margin-bottom: 15px;
+}
+
+.bus__week_table tr.body td .situation .control__body .sum_input img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  object-fit: contain;
+}
+
+.bus__week_table tr.body td .situation .control__body .sum_input input {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  display: flex;
+  height: 100%;
+  flex-shrink: 1;
+}
+
+.bus__week_table tr.body td .situation .control__body .sum_input input::placeholder {
+  color: #FFFFFF;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.bus__week_table tr.body td .situation .control__body a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+}
+
+.bus__week_table tr.body td .situation .control__body a span {
+  display: flex;
+  background: linear-gradient(84.91deg, #37C756 8.18%, #316743 90.36%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bus__week_table tr.body td .situation.closed {
+  background: linear-gradient(109.8deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 100%);
+}
+
+.bus__week_table tr.body td .situation.free_vew {
+  background: linear-gradient(84.91deg, rgba(55, 199, 86, 0.3) 8.18%, rgba(49, 103, 67, 0.3) 90.36%);
+}
+
+.bus__week_table tr.body td .situation .playing_now,
+.bus__week_table tr.body td .situation .left_time {
+  display: none;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.bus__week_table tr.body td .situation .playing_now span,
+.bus__week_table tr.body td .situation .left_time span {
+  font-weight: bold;
+}
+
+.bus__week_table tr.body td .situation.start__now {
+  background: linear-gradient(270deg, #23449671 0%, #6d86de79 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.bus__week_table tr.body td .situation.start__now .playing_now,
+.bus__week_table tr.body td .situation.start__now .left_time {
+  display: block;
+}
+
+.bus__week_table tr.body td .situation.start__now:hover .control__body {
+  background: linear-gradient(270deg, #234396 0%, #6D86DE 100%);
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.bus__week_table tr.body td .situation.start__now:hover .control__body a {
+  padding: 10px;
+}
+
+.bus__week_table tr.body td .situation.start__now:hover .control__body::after {
+  border-bottom: 9px solid #5A75CC;
+}
+
+.bus__week_table tr.body td .situation.free:hover {
+  background: linear-gradient(84.91deg, rgba(55, 199, 86, 0.3) 8.18%, rgba(49, 103, 67, 0.3) 90.36%);
+}
+
+.bus__week_table tr.body td .situation.free:hover .control__body {
+  opacity: 1;
+  visibility: visible;
+  top: 50%;
+}
+
+.do__you_ask {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.regist__past__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.regist__past__title img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+.cat__row .title strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.cat__row .title p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.add_zone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.add_zone .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.add_zone .left p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.add_zone .right {
+  display: flex;
+  flex-direction: row;
+}
+
+.add_zone .right a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.add_zone .right a img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.my_zone_plus {
+  border: 1px solid transparent;
+  border-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%) 10;
+  padding: 15px;
+}
+
+.employes {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.employes h4 {
+  padding: 15px;
+  padding-bottom: 0;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.employes p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  padding: 15px;
+}
+
+.employes strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  padding: 6px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.employes:hover strong {
+  transform: none;
+}
+
+.before__title_input {
+  position: relative;
+}
+
+.before__title_input:before {
+  content: 'Enter the code which we have sent to';
+  position: absolute;
+  top: 100%;
+  right: initial;
+  left: 0;
+  transform: translateY(100%);
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #EDEDED;
+  opacity: 0.7;
+}
+
+.aboute__input_conf {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-decoration-line: underline;
+  color: #EDEDED;
+}
+
+.top_title_control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section_mini_title {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+.employes_row {
+  margin-bottom: 60px;
+}
+
+.bus__week_nav {
+  overflow-x: scroll;
+}
+
+.colors__control {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.colors__control .color {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-right: 40px;
+  flex-shrink: 0;
+  margin-bottom: 60px;
+}
+
+.colors__control .color .color__drob {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border: 1px solid transparent;
+  border-image: linear-gradient(134.7deg, #FFFFFF 1.24%, rgba(255, 255, 255, 0) 99.25%) 10;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.colors__control .color .color__drob.dark {
+  background: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.colors__control .color .color__drob.green {
+  background: linear-gradient(84.91deg, #37C756 8.18%, #316743 90.36%);
+}
+
+.colors__control .color .color__drob.red {
+  background: #F14141;
+}
+
+.colors__control .color .color__drob.blue {
+  background: linear-gradient(270deg, #234396 0%, #6D86DE 100%);
+}
+
+.colors__control .color p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+}
+
+.monitoring__tabel_control {
+  min-width: 130px !important;
+}
+
+.this__time {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.sport__comp__imgs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.sport__comp__imgs .img_wrap {
+  width: 169px;
+  height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15px 15px;
+  position: relative;
+}
+
+.sport__comp__imgs .img_wrap .img_cont {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sport__comp__imgs .img_wrap .kres {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #09142388;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.sport__comp__imgs .img_wrap .kres img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transform: scale(0);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.sport__comp__imgs .img_wrap:hover .kres {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sport__comp__imgs .img_wrap:hover .kres img {
+  transform: scale(1);
+}
+
+.uploat__input {
+  margin-bottom: 60px;
+}
+
+.uploat__input_label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 23px;
+  border: 1px dashed #F16B41;
+}
+
+.uploat__input_label .context {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+.uploat__input_label .context img {
+  margin-right: 15px;
+}
+
+.uploat__input_label .context .text {
+  display: flex;
+  flex-direction: column;
+}
+
+.uploat__input_label .context .text strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+.uploat__input_label .context .text p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #EDEDED;
+  opacity: 0.5;
+}
+
+.uploat__input_label a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 30px;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.btn_mini {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  margin-right: auto;
+  color: #FFFFFF;
+  width: initial;
+  padding: 0 30px;
+}
+
+.btn_mini:hover {
+  color: #FFFFFF;
+}
+
+.monitoring__row_mini_section {
+  margin-bottom: 30px;
+}
+
+.description h4 {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.description .description__body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.description .description__body img {
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.description .description__body p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #FFFFFF;
+}
+
+.situation__ontime_card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 15px 15px 15px 27px;
+  position: relative;
+  background: linear-gradient(115.22deg, #191926 0%, #263344 100.47%);
+  box-shadow: 0px 20px 20px rgba(8, 1, 49, 0.41);
+  border: 1px solid;
+  border-image: linear-gradient(114.9deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+  margin-bottom: 20px;
+}
+
+.situation__ontime_card .left_line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+}
+
+.situation__ontime_card .content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.situation__ontime_card .content strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.situation__ontime_card .content p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  color: #EDEDED;
+}
+
+.situation__ontime_card .content p img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.situation__ontime_card .click__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #FFFFFF;
+  padding: 16px 48px;
+  background: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%);
+  border: 2px solid;
+  border-image: linear-gradient(109.8deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%) 10;
+}
+
+.situation__ontime_card.green .left_line {
+  background: linear-gradient(84.91deg, #37C756 8.18%, #316743 90.36%);
+}
+
+.situation__ontime_card.green .click__btn {
+  background: linear-gradient(84.91deg, #37C756 8.18%, #316743 90.36%);
+}
+
+.situation__ontime_card.blue .left_line {
+  background: linear-gradient(270deg, #234396 0%, #6D86DE 100%);
+}
+
+.situation__ontime_card.blue .click__btn {
+  background: linear-gradient(270deg, #234396 0%, #6D86DE 100%);
+}
+
+.zona__type_card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px;
+  background-image: url("../img/zone__catd_bg1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.zona__type_card.played {
+  background-image: url("../img/zone__catd_bg2.jpg");
+}
+
+.zona__type_card.canseled {
+  background-image: url("../img/zone__catd_bg3.jpg");
+}
+
+.zona__type_card p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin-bottom: 15px;
+}
+
+.zona__type_card strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 66px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.regist__past__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regist__past__title .controllers {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid;
+  border-image: linear-gradient(90.99deg, rgba(255, 255, 255, 0.5) 0.09%, rgba(255, 255, 255, 0) 100%) 10;
+}
+
+.regist__past__title .controllers a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 20px;
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.regist__past__title .controllers a.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.doughnut__diagram {
+  padding: 40px 30px;
+  border: 2px solid;
+  border-image: linear-gradient(90.99deg, rgba(255, 255, 255, 0.5) 0.09%, rgba(255, 255, 255, 0) 100%) 10;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.doughnut__diagram .doughnut__diagram_row {
+  margin-bottom: 0;
+}
+
+.doughnut__diagram .regist__past__title {
+  margin-bottom: 40px;
+}
+
+.doughnut__diagram .doughnut__diagram_sircule {
+  position: relative;
+}
+
+.doughnut__diagram .doughnut__diagram_sircule .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.doughnut__diagram .doughnut__diagram_sircule .text p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  opacity: 0.8;
+}
+
+.doughnut__diagram .doughnut__diagram_sircule .text strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .number {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-right: 11px;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .item_body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .item_body .to_from {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .item_body .to_from span {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  color: #FFFFFF;
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .item_body .line {
+  display: flex;
+  justify-content: flex-start;
+  height: 4px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.doughnut__diagram .doughnut__diagram__stat .item .item_body .line .line_pros {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(270deg, #234396 0%, #6D86DE 100%);
+}
+
+@media (max-width: 575px) {
+  .doughnut__diagram {
+    padding: 15;
+  }
+  .doughnut__diagram .doughnut__diagram_sircule {
+    margin-bottom: 30px;
+  }
+}
+
+.doughnut__diagram_row {
+  align-items: center;
+}
+
+.personal__nav span.count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.39);
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.notification_cards .click__btn {
+  padding: 16px 28px;
+  margin-left: 16px;
+}
+
+.notification_cards .click__btn:nth-of-type(1) {
+  background: transparent;
+  border: 2px solid;
+  border-image: linear-gradient(98.07deg, #F16B41 0.71%, #C51841 100%) 10;
+}
+
+.notification_cards.disabled .click__btn:nth-of-type(1) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.notification_cards.disabled .click__btn:nth-of-type(2) {
+  opacity: 0.5;
+  cursor: none;
+}
+
+.situation__ontime_card.booking_card {
+  justify-content: space-between;
+}
+
+.situation__ontime_card.booking_card .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.situation__ontime_card.booking_card .content strong {
+  margin: 0;
+}
+
+.situation__ontime_card .infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.situation__ontime_card .infos p {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  color: #EDEDED;
+  margin-bottom: 12px;
+}
+
+.situation__ontime_card .infos strong {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 19px;
+  color: #FFFFFF;
+}
+
+.booking__data__title {
+  font-family: 'TT Hoves';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+input[type="time"] {
+  position: relative;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+/*# sourceMappingURL=main.css.map */
