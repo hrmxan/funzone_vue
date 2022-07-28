@@ -1,4 +1,4 @@
-import OrderService from '../../services/order/checkPrice.service';
+import OrderService from '../../services/orders.service';
 
 const state = {
     price: 0,
@@ -16,10 +16,11 @@ const actions = {
         try {
             res = await OrderService.checkPrice(zone);
             commit('setPrice', res);
-            console.log('OrderModule.checkPrice');
+            return true;
         } catch (err) {
-            console.log('orderModule dan error qaytdi',err);
+            commit('setPrice', '');
         }
+        return false;
     }
 }
 

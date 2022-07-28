@@ -37,10 +37,11 @@ const ApiService = {
   mount401Interceptor() {
     this._401interceptor = axios.interceptors.response.use(
       (response) => {
+        console.log("INTERSEPTOR ICHIDA RES", response);
         return response;
       },
       async (error) => {
-        console.log("INTERSEPTOR ICHIDA", error);
+        console.log("INTERSEPTOR ICHIDA ERR", error);
         this.i++;
         if (this.i == 1 && messageShow) {
           if (error.request.status === 403 || error.request.status === 401) {

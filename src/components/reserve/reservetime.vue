@@ -34,7 +34,7 @@
           <div data-aos="fade-up" class="col-12 col-sm-6 col-lg-3">
             <div class="pay__card">
               <p class="you_have">
-                <img src="img/svg/wallet.svg" alt="wal">
+                <img src="@/assets/img/svg/wallet.svg" alt="wal">
                 You have to pay
               </p>
               <strong>50 000 uzs</strong>
@@ -53,7 +53,12 @@
 
 <script>
   export default {
-
+    mounted() {
+      let inputs = document.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.disabled = true;
+      });
+    },
   }
 </script>
 

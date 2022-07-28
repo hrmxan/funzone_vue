@@ -391,6 +391,7 @@
     mapActions,
     mapGetters,
     mapMutations,
+    mapState
   } from 'vuex';
   import alert from './alerts.vue';
   export default {
@@ -429,6 +430,9 @@
         zoneName: 'zoneName',
         favoriteSpaceStatus: 'favoriteSpaceStatus',
         favoriteSpaceError: 'favoriteSpaceError',
+      }),
+      ...mapState({
+        this_price: state => state.order.price,
       }),
       booking() {
         if (this.first_click && this.start_select != -1 && this.end_select != -1) {
@@ -565,8 +569,8 @@
         setFafouriteSpace: 'setFafouriteSpace',
         checkPrice: 'checkPrice',
       }),
-      booking_now() {
-        this.$swal.fire({
+      async booking_now() {
+        await this.$swal.fire({
           title: 'Do you want to save the changes?',
           text: "You won't be able to revert this!",
           showDenyButton: false,
@@ -574,7 +578,6 @@
           confirmButtonText: 'Save',
           denyButtonText: `Don't save`,
         }).then((result) => {
-          
           if (result.isConfirmed) {
             let times = {
               start_at: 0,
@@ -600,6 +603,7 @@
             this.cleartime();
           }
         })
+        console.log("MAPSTATE",this.this_price);
       },
       cleartime(){
         this.book_modal = false;

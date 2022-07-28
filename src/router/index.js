@@ -114,8 +114,11 @@ const routes = [
         component: () => import('../components/reserve/reserveIn.vue')
       },
       {
-        path: '/reserve/time',
+        path: 'time',
         name: 'Reserve Time',
+        params: {
+          price: '',
+        },
         component: () => import('../components/reserve/reservetime.vue')
       },
       {
