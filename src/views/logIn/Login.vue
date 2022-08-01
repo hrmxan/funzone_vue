@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import Navbar from '../components/Navbar.vue';
-import loader from '../components/minicomps/loader.vue';
+import Navbar from '@/components/Navbar.vue';
+import loader from '@/components/minicomps/loader.vue';
 import { mapGetters } from 'vuex';
 export default {
     components: {

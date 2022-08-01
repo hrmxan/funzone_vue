@@ -26,6 +26,7 @@
     "vue-chart-3": "^3.1.8",
     "vue-chartjs": "^4.1.1",
     "vue-disable-autocomplete": "^0.0.4",
+    "vue-i18n": "^9.2.0",
     "vue-imask": "^6.4.2",
     "vue-router": "^4.0.0-0",
     "vue-sweetalert2": "^5.0.5",

@@ -33,7 +33,7 @@ export default {
         },
         async getUserInfo(ctx) {
             ctx.commit("setLoading", true);
-            await axios.get("/v1/user/get-me")
+            await axios.post("/v1/user/get-me")
             .then(res => {
                 ctx.commit("updateUser", res);
             })

@@ -1,13 +1,14 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 import Home from '../views/Home.vue'
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home,
-    children: [
-      {
+    children: [{
         path: '/',
         name: 'Index',
         component: () => import('../views/Index.vue')
@@ -27,9 +28,8 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('../views/Login.vue'),
-    children: [
-      {
+    component: () => import('@/views/logIn/Login.vue'),
+    children: [{
         path: '/login/',
         name: 'LoginForm',
         component: () => import('../components/login/loginForm.vue')
@@ -68,8 +68,7 @@ const routes = [
     meta: {
       requiresAuth: true
     },
-    children: [
-      {
+    children: [{
         path: '/personal/',
         name: 'Personal Index',
         component: () => import('../components/personal/personal.vue'),
@@ -107,8 +106,7 @@ const routes = [
     path: '/reserve',
     name: 'Reserve',
     component: () => import('../components/reserve.vue'),
-    children: [
-      {
+    children: [{
         path: '/reserve',
         name: 'Reserve',
         component: () => import('../components/reserve/reserveIn.vue')
@@ -135,8 +133,7 @@ const routes = [
     meta: {
       requiresAuth: true
     },
-    children: [
-      {
+    children: [{
         path: '/business/',
         name: 'Business profile',
         component: () => import('../components/business/businesProfile.vue'),
@@ -151,8 +148,7 @@ const routes = [
         meta: {
           requiresAuth: true
         },
-        children: [
-          {
+        children: [{
             path: '/business/zones/',
             name: 'Business zones inner',
             component: () => import('../components/business/zones/zoneIndex.vue'),
@@ -167,8 +163,7 @@ const routes = [
             meta: {
               requiresAuth: true
             },
-            children: [
-              {
+            children: [{
                 path: '/business/zones/sport/',
                 name: 'zone sport inner',
                 component: () => import('../components/business/zones/sport/sportIndex.vue'),
@@ -209,8 +204,7 @@ const routes = [
             meta: {
               requiresAuth: true
             },
-            children: [
-              {
+            children: [{
                 path: '/business/zones/complex/',
                 name: 'zone complex inner',
                 component: () => import('../components/business/zones/complex/complexIndex.vue'),
@@ -237,8 +231,7 @@ const routes = [
         meta: {
           requiresAuth: true
         },
-        children: [
-          {
+        children: [{
             path: '/business/employess/',
             name: 'Business employess inner',
             component: () => import('../components/business/employess/employessIndex.vue'),
@@ -314,7 +307,7 @@ const routes = [
       }
     ]
   }
-  
+
 ]
 // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
 
@@ -325,7 +318,9 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition
     } else {
-      return { top: 0 }
+      return {
+        top: 0
+      }
     }
   },
   routes
@@ -337,10 +332,9 @@ router.beforeEach((to, from, next) => {
   console.log(from);
   let token = localStorage.getItem('token');
   if (to.meta.requiresAuth) {
-    (token) ? next() : next(`${from.path}`);
+    (token) ? next(): next(`${from.path}`);
     console.log('AUTH DA');
-  }
-  else if (to.name == "LoginForm" && token) {
+  } else if (to.name == "LoginForm" && token) {
     next('/personal/');
   } else {
     next();

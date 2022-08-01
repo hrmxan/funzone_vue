@@ -19,8 +19,8 @@ const UserService = {
     TokenService.removeToken();
     TokenService.removeUploadPath();
     TokenService.removeUserName();
-    ApiService.removeHeadder();
-    ApiService.unmount401Interceptor();
+    ApiService.removeHeader();
+    // ApiService.unmount401Interceptor();
   },
   registration(user) {
     return ApiService.post("/v1/user/register", user);
@@ -32,16 +32,16 @@ const UserService = {
     // birthday
     // gender
   },
-  favoriteList(){
+  favoriteList() {
     return ApiService.get('/v1/user/favorite?include=category,zoneSpaceWorkingHours');
   },
-  addFavorite(space_id){
-    return ApiService.post('/v1/user/add-favorite',space_id);
+  addFavorite(space_id) {
+    return ApiService.post('/v1/user/add-favorite', space_id);
   },
-  orderList(){
+  orderList() {
     return ApiService.get('/v1/user/orders');
   },
-  confirmEmail(data){
+  confirmEmail(data) {
     return ApiService.get(`/v1/user/confirm-email?email=${data.email}&code=${data.code}`);
   },
   login(data) {
@@ -63,18 +63,21 @@ const UserService = {
     // birthday
     // gender
   },
-  changePassword(data){
-    return ApiService.post('/v1/user/update-password',data);
+  changePassword(data) {
+    return ApiService.post('/v1/user/update-password', data);
     // old_password
     // new_password
     // password_confirm
   },
-  forgetPassword(email){
-    return ApiService.post('/v1/user/forget-password',email);
+  forgetPassword(email) {
+    return ApiService.post('/v1/user/forget-password', email);
   },
-  resetPassword(token){
+  resetPassword(token) {
     return ApiService.get(`/v1/user/reset-password?token=${token}`);
   }
 }
 
-export { UserService, AuthenticationError };
+export {
+  UserService,
+  AuthenticationError
+};

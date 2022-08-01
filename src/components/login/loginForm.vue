@@ -23,20 +23,19 @@
               <div class="col-12 col-sm-6">
                 <label for="username">Username</label>
                 <div class="input_body">
-                  <img class="first" src="@/assets/img/svg/user.svg" alt="user_icon">
+                  <img class="first" src="@/assets/img/svg/user.svg">
                   <input
-                  v-model="user.email"
-                  autocomplete="off" type="text" id="username" placeholder="playername">
+                  v-model="user.email" type="text" id="username" placeholder="playername">
                 </div>
               </div>
               <div class="col-12 col-sm-6 h-100">
                 <label for="password">Password</label>
                 <div class="input_body">
-                  <img class="first" src="@/assets/img/svg/lock.svg" alt="user_icon">
+                  <img class="first" src="@/assets/img/svg/lock.svg">
                   <input
                   v-model="user.password"
                   type="password" id="password" placeholder="password">
-                  <img class="seen seen__pasword" src="@/assets/img/svg/unseen.svg" alt="seen">
+                  <img class="seen seen__pasword" src="@/assets/img/svg/unseen.svg">
                 </div>
               </div>
               <div class="col-12 d-flex justify-content-end">
@@ -143,5 +142,4 @@ import alert from '@/components/alerts'
   body {
     background: #000e29;
   }
-
 </style>

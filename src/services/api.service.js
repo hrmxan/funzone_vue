@@ -1,7 +1,10 @@
 import axios from "axios";
-import {TokenService} from "./store.service";
-import store from "@/store/index";
-import bus from "../main";
+import {
+  TokenService
+} from "./store.service";
+import myToast from "../core/toast.options"
+import store from "../store/index";
+// import bus from "../main";
 
 
 
@@ -21,8 +24,8 @@ const ApiService = {
   setHeader() {
     axios.defaults.headers.common['Authorization'] = `Bearer ${TokenService.getToken()}`;
   },
-  removeHeadder() {
-    axios.defaults.headers.common['Authorization'] = null;
+  removeHeader() {
+    axios.defaults.headers.common = {};
   },
   get(resource, showMes = true) {
     messageShow = showMes;
@@ -32,50 +35,38 @@ const ApiService = {
     messageShow = showMes;
     return axios.post(resource, data);
   },
-  
-  
+
   mount401Interceptor() {
-    this._401interceptor = axios.interceptors.response.use(
+    axios.interceptors.response.use(
       (response) => {
         console.log("INTERSEPTOR ICHIDA RES", response);
         return response;
       },
       async (error) => {
-        console.log("INTERSEPTOR ICHIDA ERR", error);
+        console.log("INTERSEPTOR ICHIDA ERROR", error.response.status);
         this.i++;
         if (this.i == 1 && messageShow) {
-          if (error.request.status === 403 || error.request.status === 401) {
+          if (error.response.status === 401) {
             await store.dispatch("auth/logout");
+            console.log("401");
             throw error;
           } else {
-            if (error.request.status != 200 && error.request.status != 417) {
-              if (error.response.data.message || error.response.data.details) {
-                if (error.response.data.details) {
-                  bus.$showMsgErrorWithDetails(
-                    `${error.response.data.message}`,
-                    `${error.response.data.details}`
-                  );
-                } else {
-                  await bus.$showMsgError(`${error.response.data.message}`);
-                }
-              } else {
-                await bus.$showMsgError(`${error.response.data.error || error.response.data}`);
-              }
-              throw error;
+            if (error.response.status === 406) {
+              myToast.error(error.response.data.message);
             }
           }
         }
         this.i = 0;
-        // If error was not 401 just reject as is
         throw error;
-      }
+      },
     );
   },
 
   unmount401Interceptor() {
     // Eject the interceptor
-    axios.interceptors.response.eject(this._401interceptor);
+    axios.interceptors.response.eject(this._40i1nterceptor);
   },
 }
+
 
 export default ApiService;

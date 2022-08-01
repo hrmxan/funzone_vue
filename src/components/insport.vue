@@ -379,12 +379,15 @@
     SwiperSlide
   } from 'swiper/vue';
 
+  import success from '../core/toast.options';
+
+
+
   // Import Swiper styles
   import 'swiper/swiper-bundle.min.css'
   import 'swiper/swiper.min.css'
   import 'swiper/components/navigation/navigation.min.css'
   import 'swiper/components/pagination/pagination.min.css'
-
 
 
   import {
@@ -569,6 +572,7 @@
         setFafouriteSpace: 'setFafouriteSpace',
         checkPrice: 'checkPrice',
       }),
+      success,
       async booking_now() {
         await this.$swal.fire({
           title: 'Do you want to save the changes?',
@@ -603,7 +607,7 @@
             this.cleartime();
           }
         })
-        console.log("MAPSTATE",this.this_price);
+        // console.log(success.info('ajab boldi'));
       },
       cleartime(){
         this.book_modal = false;
